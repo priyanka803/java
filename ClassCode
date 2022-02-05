@@ -1,0 +1,968 @@
+//import java.io.BufferedReader;
+//import java.io.InputStreamReader;
+//import java.io.IOException;
+import java.io.*;
+public class IO{
+	public static void main(String[] arr) throws IOException{
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		InputStreamReader sys=new InputStreamReader(System.in);
+		BufferedReader br=new BufferedReader(sys);
+		String str = br.readLine();
+		int str1 = br.ready();
+		System.out.println("Entered String is: "+str+"\n"+str1);
+	}
+}
+
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+public class TestIO{
+	public static void main(String[] arr) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Enter the value: ");
+		String str1 = br.readLine();
+		int x = Integer.parseInt(str1);
+		System.out.print("Enter the value: ");
+		String str2 = br.readLine();
+		int y = Integer.parseInt(str2);
+		System.out.println("Entered String is"+x+y+(x+y));
+
+public class Abc{
+	public static int x;
+	public int y;
+	
+	public void printValue()
+	{
+		x=1000;
+		y=2000;
+		System.out.println(x+" "+y);
+	}
+	
+	public static void main(String[] arr){
+		x=200;
+		//y=500;
+		Abc obj = new Abc();
+		obj.x=10;
+		obj.y=20;
+		obj.printValue();
+		
+		Abc obj1 = new Abc();
+		obj1.x=50;
+		obj1.y=100;
+		
+		obj.printValue();
+		obj1.printValue();
+		
+	}
+}
+
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+public class TestIO{
+	public static void main(String[] arr) throws IOException{
+		BufferedReader br = new BufferedReader(new FileReader("C:/file/xyz.txt"));
+		while(br.ready()){
+			System.out.print((char)br.read());
+		}			
+	}
+}
+
+
+
+
+
+
+//javac -d . Circle.java
+//----------------------------------------------------
+package p1;
+
+
+public class Circle
+{
+	private double pi = 3.14;
+	
+	public double area(int radius)
+	{
+		return pi*radius*radius;
+	}
+}
+//----------------------------------------------------------
+
+import p1.Circle;
+public class TestMethod{
+	public static void main(String[] arr){
+		Circle c = new Circle();
+		System.out.println("Area of Circle: " +c.area(10));
+	}		
+}
+
+
+
+public class Employee{
+	private int id;
+	private double salary;
+	private String name;
+	private String designation;
+	
+	public void setId(int i){
+		id = i;
+	}
+	
+	public void setSalary(double s){
+		salary = s;		
+	}
+	
+	public void setName(String n){
+		name = n;
+	}
+	
+	public void setDesignation(String d){
+		designation = d;
+	}
+	
+	public int getId(){		
+		return id;
+	}
+	
+	public double getSalary(){		
+		return salary;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public String getDesignation(){
+		
+
+public class MuteAccess{
+	public static void main(String[] arr){
+		Employee e = new Employee();
+		e.setId(101);
+		e.setName("Ravi");
+		e.setSalary(50000);
+		e.setDesignation("Software Engineer");
+		
+		System.out.println("Id: "+e.getId()+"\n"+"Name: "
+		+e.getName()+"\n"+"Salary: "+e.getSalary()+"\n"
+		+"Designation: "+e.getDesignation());
+	}		
+}
+
+
+
+----------------------------------------------------
+
+public class Employee {
+
+	private int id;
+	private String name;
+
+	public Employee() {
+		System.out.println("This is default Constructor.");
+	}
+	
+	/*public Employee() {
+		id = 100;
+		name = "Raj";
+	}*/
+
+	public Employee(int id, String name) {
+		this();
+		this.id = id;
+		this.name = name;
+		display();
+	}
+	
+	public void display() {
+		System.out.println("Id: "+id+"\n"+"Name: "+name+"\n-----------------");
+	}
+
+}
+------------------------------------------------
+
+public class Main {
+
+	public static void main(String[] args) {
+		Employee e1 = new Employee();
+		e1.display();
+		
+		Employee e2 = new Employee();
+		e2.display();
+		
+		Employee e3 = new Employee(101, "Ajay");
+//		e3.display();
+		
+		Employee e4 = new Employee(102, "Gautam");
+//		e4.display();
+
+	}
+
+}
+Hari Ji7:34 PM
+
+public class Person {
+	private int id;
+	private String name;
+	
+	{
+		System.out.println("This is init block of Person.");
+	}
+	
+	public Person() {
+		System.out.println("This is default constructor of super class.");
+	}
+	
+	public Person(int id, String name) {
+		this.id = id;
+		this.name = name;
+		System.out.println("This is parametrized constructor of super class.");
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+}
+------------------------------------------------------------------
+
+public class Employee extends Person{
+
+	private double salary;
+	private String designation;
+	
+	public Employee(int id, String name, double salary, String designation) {
+		super(id, name);
+		this.salary = salary;
+		this.designation = designation;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+	
+	public void display() {
+		System.out.println("id="+super.getId()+ "\nName=" + super.getName() +"\nsalary=" + salary + "\ndesignation=" + 
+Hari Ji7:35 PM
+--------------------------------------------------------------------------
+
+public class Student extends Person{
+	
+	private double fee;
+	private String course;
+
+	public Student(int id, String name, double fee, String course) {
+		super(id, name);
+		this.fee = fee;
+		this.course = course;
+	}
+	
+	public void display() {
+		System.out.println("id="+super.getId()+ "\nName=" + super.getName() +"\nfee=" + fee + "\ncourse=" + course);
+	}
+}
+mmu-mikh-byb
+
+Hari Ji12:11 PM
+
+public class Poly {
+	
+	//Overloading
+	
+	
+	public String task(String s) {
+		return s.substring(2);
+	}
+	
+	public String task(String s1, String s2) {
+		return s1+s2;
+	}
+	
+	public String task(String s1, int s2) {
+		return s1+s2;
+	}
+	
+	public String task(int s1, String s2) {
+		return s1+s2;
+	}
+	
+}
+-----------------------------------------------------------------
+
+public class Calculator {
+	
+	public double calculate(int a, int b) {
+		return a+b;
+	}
+	
+	public double calculate(long a, long b) {
+		return a*b;
+	}
+	
+	public double calculate(long a, int b) {
+		return a*b;
+	}
+	
+	public double calculate(int a, long b) {
+		return a/b;
+	}
+
+	public double calculate(float a, double b) {
+		return a+b;
+	}
+	
+	public double calculate(double a, float b) {
+		return a+b;
+	}
+}
+--------------------------------------------------------------------
+
+public class TestPoly {
+
+	public static void main(String[] args) {
+		Calculator calc = new Calculator();
+		//System.out.println(calc.calculate(10, 20));
+		System.out.println(calc.calculate(12, 23));
+
+	}
+
+}
+mmu-mikh-byb
+
+
+
+
+
+Hari Ji1:12 PM
+
+public class Animal {
+	
+	public void run() {
+		System.out.println("This animal can run very fast");
+	}
+}
+-------------------------------
+
+public class Dog extends Animal{
+	
+	public void run() {
+		System.out.println("The Dog can run very fast");
+	}
+
+}
+---------------------------------------------------------
+
+public class TestPoly {
+
+	public static void main(String[] args) {
+		Animal a = new Dog();
+		a.run();
+		
+		Animal a1 = new Animal();
+		a1.run();
+		
+		Dog d = new Dog();
+		d.run();
+	}
+
+}
+mmu-mikh-byb
+
+
+
+anku bisht12:58 PM
+sir 1 question method overriding me return type different le sakte hai
+Hari Ji1:35 PM
+
+public class Address {
+
+	private String locality;
+	private String houseNumber;
+	private int pin;
+	private String city;
+	private String state;
+	private String country;
+
+	public String getLocality() {
+		return locality;
+	}
+
+	public void setLocality(String locality) {
+		this.locality = locality;
+	}
+
+	public String getHouseNumber() {
+		return houseNumber;
+	}
+
+	public void setHouseNumber(String houseNumber) {
+		this.houseNumber = houseNumber;
+	}
+
+	public int getPin() {
+		return pin;
+	}
+
+	public void
+--------------------------------------------------------------------------
+
+public class Person {
+	private int id;
+	private String name;
+	private Address address;
+	
+	{
+		System.out.println("This is init block of Person.");
+	}
+	
+	public Person() {
+		System.out.println("This is default constructor of super class.");
+	}
+	
+	public Person(int id, String name) {
+		this.id = id;
+		this.name = name;
+		System.out.println("This is parametrized constructor of super class.");
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Address g
+----------------------------------------------------------
+
+public class Employee extends Person{
+
+	private double salary;
+	private String designation;
+	
+	public Employee(int id, String name, double salary, String designation) {
+		super(id, name);
+		this.salary = salary;
+		this.designation = designation;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+	
+	public void display() {
+		System.out.println("id="+super.getId()+ "\nName=" + super.getName() +"\nsalary=" + salary + "\ndesignation=" + 
+------------------------------------------------------------
+
+public class TestPoly {
+
+	public static void main(String[] args) {
+		
+		Employee emp = new Employee(1, "Abc", 50000, "Tester");
+		
+		Address address = new Address();
+		address.setLocality("Sector 62");
+		address.setHouseNumber("B45");
+		address.setCity("Noida");
+		address.setState("UP");
+		address.setCountry("India");
+		address.setPin(201301);
+		
+		emp.setAddress(address);
+		emp.display();
+		
+	}
+
+}
+mmu-mikh-byb
+
+
+
+Hari Ji2:12 PM
+
+public abstract class Calculators {
+	
+	//Abstract
+	public abstract double calculate(double a, double b); 
+
+	//Concrete
+	public void result(double result) {
+		System.out.println("result: "+result);
+	}
+}
+-----------------------------------------------------
+
+public class Summation extends Calculators{
+	
+	@Override
+	public double calculate(double a, double b) {
+		return a+b;
+	}
+}
+--------------------------------------------------------------------------
+Hari Ji2:13 PM
+
+public class Subtraction extends Calculators {
+
+	@Override
+	public double calculate(double a, double b) {
+		return a-b;
+	}
+
+}
+-------------------------------------------------
+
+public class Multiplication extends Calculators {
+
+	@Override
+	public double calculate(double a, double b) {
+		return a*b;
+	}
+
+}
+-------------------------------------------------------
+
+public class AbstractMain {
+
+	public static void main(String[] args) {
+		
+		Calculators calc = null;
+		
+		//Factory Design Pattern
+		switch (args[0]) {
+		
+		case "add":
+			calc = new Summation();
+			break;
+			
+		case "sub":
+			calc = new Subtraction();
+			break;
+			
+		case "multi":
+			calc = new Multiplication();
+			break;
+
+		default:
+			break;
+		}
+		
+		double result = calc.calculate(30,10);
+		calc.result(result);
+		
+	}
+
+}
+mmu-mikh-byb
+
+
+Hari Ji7:20 PM
+
+public interface InterfaceTest1 {
+	
+	//Abstract
+		void x(); 
+		
+		public default void y() {
+			System.out.println("Calling Y from InterfaceTest1.");
+		}
+		
+}
+-------------------------------------------------
+
+public interface InterfaceTest2 {
+	
+	//Abstract
+		void x();
+		
+		public default void y() {
+			System.out.println("Calling from InterfaceTest1.");
+		}
+		
+}
+----------------------------------------------
+
+public class Test1 {
+	
+	public void x() {
+		System.out.println("Calling X from class Test1.");
+	}
+	
+	public void y() {
+		System.out.println("Calling Y from Test1.");
+	}
+
+}
+-------------------------------------------------------
+
+public class PlaneTest extends Test1 implements InterfaceTest1, InterfaceTest2 {
+
+	/*public void y() {
+		System.out.println("Calling Y from PlaneTest.");
+	}*/
+}
+--------------------------------------------
+Hari Ji7:21 PM
+
+----------------------------------------------------
+public class InterfaceMain {
+
+	public static void main(String[] args) {
+		InterfaceTest1 obj1 = new PlaneTest();
+		obj1.x();
+		obj1.y();
+
+	}
+
+}
+mmu-mikh-byb
+
+
+Hari Ji6:26 PM
+-?
+->
+Hari Ji7:16 PM
+
+@FunctionalInterface
+public interface Shape1 {
+	
+	double calculate(double x);
+	default double calculate1(double x) {
+		return 0.0;
+	}
+	public static void test() {
+		System.out.println("Hello!");
+	}
+
+}
+-----------------------------------------------
+public class FunctionalInterfaceDemo {
+
+	public static void main(String[] arr) {
+
+		Shape1.test();
+		
+		Shape1 s1 = (double x) -> x * x;
+		System.out.println("Square: " + s1.calculate(10));
+		
+		System.out.println(s1.calculate1(0));
+
+
+		Shape1 s2 = (double x) -> {
+			return 3.14 * x * x;
+		};
+		System.out.println(s2.calculate1(0));
+		System.out.println("Square: " + s2.calculate(10));
+	}
+}
+mmu-mikh-byb
+
+
+
+Hari Ji12:41 PM
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class CharacterInputTest {
+
+	public static void main(String[] args) throws IOException{
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		char[] ch = new char[3];
+		for(int i=0; i<ch.length; i++) {
+			System.out.println("Enter a char: ");		
+			ch[i] = (char)br.read();
+			br.readLine();
+		}
+		for (char c : ch) {
+			System.out.println("Enterdered Char is: "+c);
+		}
+	
+Hari Ji12:43 PM
+---------------------------------------------------
+import java.util.Scanner;
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int ar[] = new int[5];
+
+		for(int i=0; i<ar.length; i++) {
+			System.out.print("Enter the Value: ");
+			ar[i] = sc.nextInt();
+		}
+		
+		System.out.println("Entered Values are: ");
+		for (int value : ar) {
+			System.out.println(value);
+		}
+		sc.close();
+	}
+
+}
+mmu-mikh-byb
+
+
+public class TwoDArray {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int row=0,col=0;
+		
+		System.out.print("Enter the row: ");
+		row = sc.nextInt();
+		
+		System.out.print("Enter the col: ");
+		col = sc.nextInt();
+		
+		int ar[][] = new int[row][col];
+		
+		for(int i=0; i<row; i++) {
+			for(int j=0; j<col; j++) {
+				System.out.print("Enter the value of "+i+j+" index: ");
+				ar[i][j] = sc.nextInt();
+			}
+
+
+
+			Hari Ji1:20 PM
+
+public class ThreeDArrayDemo {
+
+	public static void main(String[] args) {
+		
+		//3X2X4
+		int ar[][][] = {
+				{{1,2,3,4},{3,5,2,6}},
+				{{3,7,2,8},{8,2,9,0}},
+				{{3,7,9,1},{5,0,6,1}}
+		};
+		
+		System.out.print("[");
+		for(int i=0; i<3; i++) {
+			for(int j=0; j<2; j++) {
+				for(int k=0; k<4; k++) {
+					System.out.print(ar[i][j][k]+" ");
+				}
+			}
+			System.out.println();
+		}
+		System.out.print("]");
+
+	}
+
+}
+
+public class ThreeDArrayDemo {
+
+	public static void main(String[] args) {
+		
+		//3X2X4
+		int ar[][][] = {
+				{{1,2,3,4},{3,5,2,6}},
+				{{3,7,2,8},{8,2,9,0}},
+				{{3,7,9,1},{5,0,6,1}}
+		};
+		
+		System.out.print("[");
+		for(int i=0; i<3; i++) {
+			for(int j=0; j<2; j++) {
+				for(int k=0; k<4; k++) {
+					System.out.print(ar[i][j][k]+" ");
+				}
+			}
+			System.out.println();
+		}
+		System.out.print("]");
+
+	}
+
+}
+mmu-mikh-byb
+
+
+Hari Ji7:00 PM
+import java.util.Scanner;
+
+public class JaggedArrayDemo {
+	
+	public void display(int jaggedArr[][], int jArSize) {
+		for(int i=0; i<jArSize; i++) {
+			for(int j=0; j<jaggedArr[i].length; j++) {
+				System.out.print(jaggedArr[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the Size of jagged Array: ");
+		int jArSize = sc.nextInt();
+		int jaggedArr[][] = new int[jArSize][];
+		
+		int arr[];
+for(int i=0; i<jArSize; i++) {
+			System.out.print("Enter the size of element to store in row "+ (i+1) +": ");
+			arr = new int[sc.nextInt()];
+			for(int j=0; j<arr.length; j++) {
+				System.out.print("Enter the element value: ");
+				arr[j] = sc.nextInt();
+			}
+			jaggedArr[i] = arr;
+		}
+		sc.close();
+		
+		JaggedArrayDemo arrayDemo = new JaggedArrayDemo();
+		arrayDemo.display(jaggedArr, jArSize);
+
+	}
+
+}
+mmu-mikh-byb
+
+
+Hari Ji8:20 PM
+
+public class ExceptionDemo {
+
+	public static void main(String[] args) {
+		
+		try {
+			String s1 = args[0];
+			String s2 = args[1];
+			
+			int a = Integer.parseInt(s1);
+			int b = Integer.parseInt(s2);
+			
+			System.out.println(a/b);
+			
+		} catch (StringIndexOutOfBoundsException | ArrayIndexOutOfBoundsException e) {
+			System.out.println(e.getMessage());
+			System.out.println("The specified index does not exist.");
+		}catch (NullPointerException e) {
+			
+System.out.println("Null: "+e.getMessage());
+		}catch (ArithmeticException e) {
+			System.out.println("The second number should be non zero.");
+		}catch (NumberFormatException e) {
+			System.out.println("Input must be a number.");
+		}finally {
+			System.out.println("this is finally block.");
+		}
+	}
+
+}
+mmu-mikh-byb
+
+Hari Ji8:34 PM
+---------------------------------------------------------------
+
+public class MyException extends Exception {
+	public MyException(String s) {
+		super(s);
+	}
+
+}
+------------------------------------------------------------------------
+
+public class UserExceptionDemo {
+
+	public static void main(String[] args){
+		int amount = 10000;
+		int widthrawAmt = Integer.parseInt(args[0]);
+		try {
+			
+			if (widthrawAmt > amount) {
+				throw new MyException("Insufficient Balance.");
+			}
+			System.out.println("jfskjf");
+			
+		} catch (MyException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}
+mmu-mikh-byb
+
+
+public class GenericTest<T> {
+	
+	public void display(T obj1) {
+		
+		System.out.println(obj1);
+		
+	}
+
+}
+------------------------------------------------
+
+public class GenericMain {
+
+	public static void main(String[] args) {
+		GenericTest<Double> genericTest = new GenericTest<>();
+		GenericTest<String> genericTest1 = new GenericTest<>();
+		
+		Integer i = 10; 
+		Double j = 20.0;
+		genericTest.display(j);
+		genericTest1.display("Hello");
+		
+	}
+
+}
+
+
+import java.util.List;
+
+public class UpperBoundTest {
+	
+	public double sum(List<? extends Number> list) {
+		double sum = 0.0;
+		for (Number number : list) {
+			sum = sum+number.doubleValue();
+		}
+		return sum;
+	}
+
+}
+---------------------------------------------------------------------------
+import java.util.Arrays;
+import java.util.List;
+
+public class UpperBoundMain {
+
+	public static void main(String[] args) {
+		List<Integer> intList = Arrays.asList(1,4,2,6,7);
+		UpperBoundTest test = new UpperBoundTest();
+		System.out.println(test.sum(intList));
+		
+		List<Double> doubleList = Arrays.asList(1.8,4.5,2.4,6.2,7.4);
+		System.out.println(test.sum(doubleList));
+		
+
+	}
+
+}
